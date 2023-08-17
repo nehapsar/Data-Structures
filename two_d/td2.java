@@ -2,8 +2,8 @@ package test;
 
 public class td2 {
 	public static void print(int mat[][]) {
-//		int sr=0;
-//		int er=mat.length-1;
+		int sr=0;
+		int er=mat.length-1;
 //		int sc=0;
 //		int ec=mat[0].length-1;
 		while(sr<=er && sc<=ec) {
