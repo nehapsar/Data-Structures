@@ -1,11 +1,11 @@
 package array;
 
 public class bin {
-//      public static int binary(int num[], int key) {
+      public static int binary(int num[], int key) {
     	  int si=0;
     	  int ei=num.length;
     	  
-  //  	  while(si<=ei) {
+  	  while(si<=ei) {
     		int mid=(si+ei)/2;
     		if(num[mid]==key) {
     			return mid;
