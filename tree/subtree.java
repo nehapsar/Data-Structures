@@ -53,9 +53,9 @@ public class treeb {
 		root.right.left=new Node(6);
 		
 //		Node subRoot=new Node(2);
-//		subRoot.left=new Node(4);
-//		subRoot.right=new Node(5);
-//		System.out.println(isSubtree(root,subRoot));
+		subRoot.left=new Node(4);
+		subRoot.right=new Node(5);
+		System.out.println(isSubtree(root,subRoot));
 		
 }
 }
