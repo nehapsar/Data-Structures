@@ -1,6 +1,6 @@
 package trrr;
 public class treef {
-//	static class Node{
+	static class Node{
     	int data;
     	Node left;
     	Node right;
@@ -22,7 +22,7 @@ public class treef {
 			
 		}
 		
-//		Kth_level(root.left,level+1,k);
+		Kth_level(root.left,level+1,k);
 //		Kth_level(root.right,level+1,k);
 	}
 	
