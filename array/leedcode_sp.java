@@ -3,11 +3,11 @@ package array;
 public class Solutions {
 	
 	    public static void spiralOrder(int[][] matrix) {
-//	        int sr=0,sc=0;
- //	        int er=matrix.length-1;
-//	        int ec = matrix[0].length-1;
+	        int sr=0,sc=0;
+	        int er=matrix.length-1;
+	        int ec = matrix[0].length-1;
 
-//	        while(sr<=er && sc<=ec){
+	        while(sr<=er && sc<=ec){
 	            //top
 	        for(int i=sc;i<=ec;i++){
 	            System.out.print(matrix[sr][i]+" ");
