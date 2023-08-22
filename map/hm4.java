@@ -27,10 +27,10 @@ public class hm4 {
         return hm.isEmpty(); // Moved the return statement outside of the loop
     }
 
-    //public static void main(String args[]) {
+public static void main(String args[]) {
         String s = "care";
         String k = "race";
-  //      boolean result = isAnagram(s, k);
-//        System.out.println("Are the strings anagrams? " + result);
+      boolean result = isAnagram(s, k);
+        System.out.println("Are the strings anagrams? " + result);
     }
 }
