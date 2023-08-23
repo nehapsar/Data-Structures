@@ -11,7 +11,7 @@ public class hm7 {
 
 	for(int i=0;i<nums.length;i++) {
 		hs.add(nums[i]);
-//	}
+	}
 	Iterator it= hs.iterator();
 	while(it.hasNext()) {
 		System.out.print(it.next()+" ");
