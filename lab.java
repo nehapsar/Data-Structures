@@ -15,7 +15,7 @@ public class xyz {
 	{
 	      private int materials;
 	      private boolean available = false;
-//	      public synchronized int get()
+	      public synchronized int get()
 	      {
 	            while (available == false)
 	            {
