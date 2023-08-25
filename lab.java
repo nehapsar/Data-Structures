@@ -13,8 +13,8 @@ public class xyz {
 	}
 	class Shop
 	{
-//	      private int materials;
-//	      private boolean available = false;
+	      private int materials;
+	      private boolean available = false;
 //	      public synchronized int get()
 	      {
 	            while (available == false)
