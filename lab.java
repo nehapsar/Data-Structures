@@ -7,11 +7,11 @@ public class xyz {
 	            Shop c = new Shop();
 	            Producer p1 = new Producer(c, 1);
 	            Consumer c1 = new Consumer(c, 1);
-//	            p1.start();
-//	            c1.start();
+	            p1.start();
+	            c1.start();
 	      }
 	}
-//	class Shop
+	class Shop
 	{
 //	      private int materials;
 //	      private boolean available = false;
