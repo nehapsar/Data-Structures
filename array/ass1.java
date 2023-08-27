@@ -22,7 +22,7 @@ public class x {
 		while(l <= r){
 		int mid = l + (r - l)/2;
 		if(nums[mid] == target){
-	//	}
+	}
 		return mid;
 		else if(nums[mid] > target){
 		}
@@ -34,8 +34,8 @@ public class x {
 		}
 		return -1;
 		//smallest element index
-	//	public int minSearch(int[] nums){
-		int left = 0;
+	public int minSearch(int[] nums){
+int left = 0;
 		int right = nums.length-1;
 }
 	//	while(left < right){
