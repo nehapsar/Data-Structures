@@ -16,9 +16,9 @@ public class x {
 		return search(nums,0,min,target);
 		//binary search to find target in left to right boundary
 		public int search(int[] nums,int left,int right,int target){
-	//	int l = left;
+	int l = left;
 		int r = right;
-		// System.out.println(left+" "+right);
+ System.out.println(left+" "+right);
 		while(l <= r){
 		int mid = l + (r - l)/2;
 		if(nums[mid] == target){
