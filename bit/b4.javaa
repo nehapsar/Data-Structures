@@ -1,0 +1,7 @@
+package bit;
+
+public class b5 {
+public static int clear_r(int n,int i) {
+	int Bitmask=(~0<<i);
+	return n & Bitmask;
+}
