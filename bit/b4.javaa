@@ -5,3 +5,11 @@ public static int clear_r(int n,int i) {
 	int Bitmask=(~0<<i);
 	return n & Bitmask;
 }
+
+public static void main(String[] args) {
+		int n=15,i=2;
+		System.out.println(clear_r(n,i));
+		System.out.println(~0);
+	}
+
+}
