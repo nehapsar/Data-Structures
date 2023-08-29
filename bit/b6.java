@@ -9,3 +9,10 @@ public class b6 {
     	   
        }
 
+public static void main(String[] args) {
+		int n=10,i=2,j=4;
+		System.out.println(clear_set(n ,i,j));
+		
+	}
+
+}
