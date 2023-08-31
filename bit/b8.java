@@ -12,3 +12,10 @@ public class b8 {
     	   }
     	   return ans;
        }
+  
+	public static void main(String[] args) {
+		int a=5; int n=2; 
+     System.out.println(PowerOfNumber(a,n));
+	}
+
+}
