@@ -7,3 +7,9 @@ public class ld3 {
 	        	  return sb.length()-1; }
 	          sb.append(s.charAt(i));
 	          }
+  }
+	        return -1;
+	        }
+	
+	public static void main(String[] args) {
+    String s = "luffy is still joyboy";
