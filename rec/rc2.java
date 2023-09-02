@@ -10,7 +10,7 @@ public class rc2 {
     	System.out.print(n +" ");
     
     }
-
+   public static void main(String args[]){
 		int n=10;
 		printInc(n);
 
