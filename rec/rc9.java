@@ -14,3 +14,11 @@ if(lastPos==0) {
         		pairs(n-1,1,str+"1");
         	}
         }
+public static void main(String[] args) {
+		int n=10;
+		
+		pairs(n ,0,""); 
+
+	}
+
+}
