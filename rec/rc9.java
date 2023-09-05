@@ -10,3 +10,7 @@ public class rc8 {
         	
         	pairs(n-1,0,str+"0");
         	
+if(lastPos==0) {
+        		pairs(n-1,1,str+"1");
+        	}
+        }
