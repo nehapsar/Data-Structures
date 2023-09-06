@@ -10,3 +10,12 @@ public class rc13 {
     	 len(str,idx+1);
     	 
      }
+	 
+     }
+	public static void main(String[] args) {
+		String str="neha";
+		len(str, 1);
+
+	}
+
+}
