@@ -7,3 +7,11 @@ public class a1{
 	                count++;
 	            }
       
+
+	            else {
+	            	prev=count;
+	                count=0;
+	                }
+	 }
+	        return Math.max(prev, count);
+	    }
