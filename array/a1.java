@@ -15,3 +15,9 @@ public class a1{
 	 }
 	        return Math.max(prev, count);
 	    }
+
+public static void main(String[] args) {
+		int nums[]= {1,1,0,1,1,1};
+		System.out.println(findMaxConsecutiveOnes(nums,1));
+}
+}
