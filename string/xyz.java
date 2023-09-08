@@ -17,3 +17,12 @@ public class xyz {
 	            return -1;
 	    }  
 
+ public static void main(String args[]) {
+	    	String str="   fly me   to   the moon  ";
+	    	System.out.println(lengthOfLastWord(str));
+	    }
+	    
+	    
+	    
+	}
+
