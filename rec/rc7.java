@@ -10,3 +10,10 @@ public class rc7 {
     	  return hm.get(key);
     	  
        }
+public static void main(String[] args) {
+		int num[]= {1,2,3,4,5,6,9,7,8,9};
+		int key=3;
+		System.out.println(secSearch(num,key));
+	}
+
+}
