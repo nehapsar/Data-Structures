@@ -24,3 +24,17 @@ public static boolean isEmpty() {
     			  rear=rear+1;
     			  arr[rear]=data;
     	   }
+public static int remove() {
+    			  
+    			  if(isEmpty()) {
+    				  return -1;
+    			  }
+    			  int front=arr[0];
+    			  for(int i=0;i<rear;i++) {
+    				  arr[i]=arr[i+1];
+    			  }
+    			  rear=rear-1;
+    			 
+    			 return front;
+    		  }
+
