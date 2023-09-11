@@ -27,3 +27,13 @@ public class ql {
 				tail=newNode;		
 					
 			}
+public static int remove() {
+				if(tail==head) {
+					tail=head=null;
+					return -1;
+					
+				}
+				int front=head.data;
+				head=head.next;
+				return front;
+			}
