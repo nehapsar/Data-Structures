@@ -12,3 +12,18 @@ public class ql {
 			static Node head;
 			static Node tail ;
 			
+
+			public static boolean isEmpty() {
+				return head ==null && tail==null;
+				
+			}
+			public static void add(int data) {
+				Node newNode = new Node(data);
+				if(head==null) {
+					head=tail=newNode;
+					return;
+						}
+				tail.next=newNode;
+				tail=newNode;		
+					
+			}
