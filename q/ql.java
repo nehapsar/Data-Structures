@@ -45,3 +45,17 @@ public static int peek() {
 					return head.data;
 				}
 			}
+public static void main(String[] args) {
+        qll newql=new qll();
+         newql.add(1);
+        newql.add(2);
+       newql.add(4);
+        while(!newql.isEmpty()) {
+        System.out.println(newql.peek());
+		newql.remove();
+        	 
+        }
+         
+	}
+
+}
