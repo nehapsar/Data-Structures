@@ -37,3 +37,11 @@ public static int remove() {
 				head=head.next;
 				return front;
 			}
+public static int peek() {
+				if(isEmpty()) {
+					System.out.println("the ll is empty");
+					
+					return -1;}
+					return head.data;
+				}
+			}
