@@ -26,3 +26,12 @@ public static void add(int data) {
 			}
 			return s1.pop();
 		}
+public static int peek() {
+			if(s1.isEmpty()) {
+				System.out.println("the queue is empty");
+				return -1;
+			}
+			return s1.peek();
+		}
+
+	}
