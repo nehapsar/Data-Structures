@@ -18,3 +18,11 @@ public static void add(int data) {
 				s1.push(s2.pop());
 			}
 		}
+// to remove
+		public static int remove() {
+			if(s1.isEmpty()) {
+				System.out.println("the queue is empty");
+				return -1;
+			}
+			return s1.pop();
+		}
