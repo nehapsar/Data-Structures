@@ -41,3 +41,10 @@ public static void main(String[] args) {
 		q1.add(1);
 		q1.add(2);
         q1.add(3);
+while(!q1.isEmpty()) {
+        	System.out.println(q1.peek());
+        	q1.remove();
+        }
+	}
+
+}
