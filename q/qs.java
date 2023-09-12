@@ -35,3 +35,9 @@ public static int peek() {
 		}
 
 	}
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		queue q1 = new queue();
+		q1.add(1);
+		q1.add(2);
+        q1.add(3);
