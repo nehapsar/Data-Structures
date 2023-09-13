@@ -20,11 +20,11 @@ public class q2 {
       if(q.isEmpty()) {
     		  System.out.print("-1"+" ");
     	  }
- //else {
+else {
     		  System.out.print(q.peek()+" ");
     	  }
     	  
-//    	  System.out.println();
+   	  System.out.println();
     	  
     	  }
       }
