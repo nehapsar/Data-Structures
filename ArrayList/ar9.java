@@ -10,3 +10,18 @@ public static boolean find(ArrayList<Integer> al ,int target) {
 			break;
 		}
 	}
+int lp=bp+1;
+	int rp=bp;
+	while(lp!=rp) {
+		if(al.get(lp)+al.get(rp)== target) {
+			return true;
+		}
+		if((al.get(lp)+al.get(rp))<target) {
+			lp=(lp+1) % n ;
+		}
+		else {
+			rp = (rp+n-1)%n;
+		}
+	}
+	return false;		
+}
