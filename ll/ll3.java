@@ -54,3 +54,18 @@ public static void AddMid(int idx , int data) {
 	 newNode.next =tmp.next;
 	 tmp.next =newNode;
 	  }
+public static void main(String[] args) {
+	LinkedList2 ll = new LinkedList2();
+     ll.AddFirst(4);
+     ll.AddFirst(3);
+     ll.AddFirst(2);
+     ll.AddLast(1);
+     ll.print();
+     ll.AddLast(0);
+     ll.print();
+     ll.AddMid(3, 9);
+     ll.print();
+     System.out.println(size);
+	}
+
+}
