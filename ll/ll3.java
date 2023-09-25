@@ -35,3 +35,11 @@ public static void AddLast(int data) {
 	  tail.next=newNode;
 	   tail=newNode;
  }
+public static void print() {
+	 Node tmp= head;
+	 while(tmp!= null) {
+		 System.out.print(tmp.data+"-->");
+		 tmp=tmp.next;
+	 }
+	 System.out.println("null");
+ }
