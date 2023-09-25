@@ -10,3 +10,18 @@ public class LinkedList2 {
 		 this.next=null;
 	 }
  }
+public static Node head=null;
+ public static Node tail=null;
+ public static int  size;
+ // adding first element
+ public static void AddFirst(int data) {
+	Node newNode= new Node(data);
+	size++;
+	 if(head==null) {
+		 head=tail=newNode;
+		 return;
+	 }
+	 newNode.next=head;
+	 head=newNode;
+	 
+ }
