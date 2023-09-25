@@ -43,3 +43,14 @@ public static void print() {
 	 }
 	 System.out.println("null");
  }
+public static void AddMid(int idx , int data) {
+	 Node newNode = new Node(data);
+	 Node tmp = head; int i=0;
+	// Node newNode = new Node(data);
+	 while(i < idx-1) {
+		 tmp = tmp.next ;
+		 i++;
+	 }
+	 newNode.next =tmp.next;
+	 tmp.next =newNode;
+	  }
