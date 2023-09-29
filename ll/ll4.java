@@ -68,3 +68,14 @@ public static Node head =null;
            
       }
       
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+           LinkedList4 ll = new LinkedList4();
+           ll.AddFirst(1);
+           ll.AddFirst(2);ll.AddFirst(4);
+           ll.print();
+           System.out.println(ll.palindrome());
+           
+	}
+
+}
