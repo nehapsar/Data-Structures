@@ -11,3 +11,14 @@ public class LinkedList4 {
     	  }
     	  
       }
+public static Node head =null;
+      public static Node tail =null;
+      public static void AddFirst(int data) {
+    	  Node newNode = new Node(data);
+    	  if(head == null) {
+    		  head = tail = newNode ;
+    		  return ;
+    	  }
+    	  newNode.next = head;
+    	  head = newNode;
+      }
