@@ -22,3 +22,20 @@ public static Node head =null;
     	  newNode.next = head;
     	  head = newNode;
       }
+ public static void print() {
+    	  Node tmp = head ;
+    	  while(tmp != null) {
+    		  System.out.print(tmp.data +"-->");
+    		  tmp = tmp.next;
+    	  }
+    	  System.out.println("null");
+      }
+      public static Node Mid(Node head) {
+    	  Node sl=head;
+    	  Node fs = head ;
+    	  while(fs.next !=null ) {
+    		  sl= sl.next;
+    		  fs = fs.next.next;
+    	  }
+    	  return sl;
+      }
