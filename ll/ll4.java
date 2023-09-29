@@ -39,3 +39,32 @@ public static Node head =null;
     	  }
     	  return sl;
       }
+ public static boolean palindrome() {
+          if(head==null || head.next == null) {
+        	  return true;
+          }
+    	  Node mid = Mid(head);
+    	  Node prev = null;
+           Node curr = mid ;
+           Node next;
+           
+           while(curr != null) {
+        	  next = curr.next;
+        	  curr.next = prev ;
+        	  prev= curr;
+        	  curr = next;
+        	  
+           }
+           Node left = head;
+           Node right = prev;
+           while(left!= null) {
+        	   if(right.data != left.data) {
+        		   return false;
+        	   }
+        	   left = left.next;
+        	   right= right.next;
+           }
+           return true;
+           
+      }
+      
