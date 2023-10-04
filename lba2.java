@@ -21,8 +21,8 @@
 	    			double sum=cc.calculatesum(cc.getlist());
 	    			System.out.println("sum="+ sum);
 	    			break;
-	    		case 3:
-//	    			List ll=cc.sort(cc.getlist());
+    		case 3:
+	    			List ll=cc.sort(cc.getlist());
 	    			System.out.println(ll);break;
 	    		case 4:
 	    			List lt= cc.getlist();
@@ -30,4 +30,4 @@
 	    			break;
 	    		}
 	    	}
-//	    }}
+	    }}
