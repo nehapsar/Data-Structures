@@ -6,7 +6,7 @@
 	public class Main {
 	    public static void main(String[] args) {
 	    	Scanner sc = new Scanner(System.in);
-//	    	NumberContainer cc= new NumberContainer();
+	    	NumberContainer cc= new NumberContainer();
 	    	while(true) {
 	    		System.out.println("\nenter your choice\n1.enter the two numbers\n2.add the numbers\n3.sort the numbers\n4.return list\n5.exit");
 	    		int ch= sc.nextInt();
