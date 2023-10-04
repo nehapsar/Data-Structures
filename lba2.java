@@ -12,7 +12,7 @@
 	    		int ch= sc.nextInt();
 	    		switch(ch) {
 	    		case 1:
-//	    			int a =sc.nextInt();
+	    			int a =sc.nextInt();
 	    			cc.add(a);
 	    			int b= sc.nextInt();
 	    			cc.add(b);
