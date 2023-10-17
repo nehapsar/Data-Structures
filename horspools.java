@@ -37,3 +37,10 @@ public static int horspoolStringMatch(String text, String pattern) {
 
         return -1; // Pattern not found
     }
+private static int[] generateShiftTable(String pattern) {
+        int patternLength = pattern.length();
+        int[] shiftTable = new int[256]; // ASCII character set assumed
+
+        for (int i = 0; i < shiftTable.length; i++) {
+            shiftTable[i] = patternLength;
+        }
