@@ -27,3 +27,13 @@ public static int horspoolStringMatch(String text, String pattern) {
             while (k < patternLength && pattern.charAt(patternLength - 1 - k) == text.charAt(i - k)) {
                 k++;
             }
+
+            if (k == patternLength) {
+                return i - patternLength + 1; // Pattern found
+            } else {
+                i += shiftTable[text.charAt(i) - 'A'];
+            }
+        }
+
+        return -1; // Pattern not found
+    }
