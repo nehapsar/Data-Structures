@@ -44,3 +44,12 @@ private static int[] generateShiftTable(String pattern) {
         for (int i = 0; i < shiftTable.length; i++) {
             shiftTable[i] = patternLength;
         }
+
+        for (int i = 0; i < patternLength - 1; i++) {
+            char c = pattern.charAt(i);
+            shiftTable[c - 'A'] = patternLength - 1 - i;
+        }
+
+        return shiftTable;
+    }
+}
