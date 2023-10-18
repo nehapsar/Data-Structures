@@ -37,3 +37,30 @@ public class PrimAlgorithm {
                     key[v] = graph[u][v];
                 }
             }
+ }
+
+        // Print the constructed MST
+        printMST(parent, graph);
+    }
+
+    // A utility method to find the vertex with the minimum key value,
+    // which is not yet included in the MST
+    private static int minKey(int[] key, boolean[] mstSet) {
+        int min = Integer.MAX_VALUE, minIndex = -1;
+
+        for (int v = 0; v < key.length; v++) {
+            if (!mstSet[v] && key[v] < min) {
+                min = key[v];
+                minIndex = v;
+            }
+        }
+
+        return minIndex;
+    }
+
+    // A utility method to print the constructed MST stored in parent[]
+    private static void printMST(int[] parent, int[][] graph) {
+        System.out.println("Edge \tWeight");
+        for (int i = 1; i < graph.length; i++) {
+            System.out.println(parent[i] + " - " + i + "\t" + graph[i][parent[i]]);
+        }
