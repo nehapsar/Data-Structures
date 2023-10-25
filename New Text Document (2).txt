@@ -1,0 +1,52 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
+class Item {
+    int value;
+    int weight;
+
+    public Item(int value, int weight) {
+        this.value = value;
+        this.weight = weight;
+    }
+}
+
+public class FractionalKnapsack {
+    public static double fractionalKnapsack(int capacity, Item[] items) {
+        Arrays.sort(items, new Comparator<Item>() {
+            public int compare(Item item1, Item item2) {
+                double ratio1 = (double) item1.value / item1.weight;
+                double ratio2 = (double) item2.value / item2.weight;
+                return Double.compare(ratio2, ratio1); // Sort in descending order of value-to-weight ratio
+            }
+        });
+
+        double maxValue = 0.0;
+        for (Item item : items) {
+            if (capacity >= item.weight) {
+                // Take the whole item
+                maxValue += item.value;
+                capacity -= item.weight;
+            } else {
+                // Take a fraction of the item
+                double fraction = (double) capacity / item.weight;
+                maxValue += item.value * fraction;
+                break;
+            }
+        }
+
+        return maxValue;
+    }
+
+    public static void main(String[] args) {
+        Item[] items = {
+            new Item(60, 10),
+            new Item(100, 20),
+            new Item(120, 30)
+        };
+        int capacity = 50;
+
+        double maxTotalValue = fractionalKnapsack(capacity, items);
+        System.out.println("Maximum total value: " + maxTotalValue);
+    }
+}
