@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<center>
+<h1>Real Time Fetch with Simple Balance Sheet Statement</h1>
+<table id='tbl' border=1>
+<tr>
+<th style="width: 120px;"> Date </th>
+<th style="width: 120px;"> Net Receivables </th>
+<th style="width: 120px;"> Cash And CashEquivalents </th>
+<th style="width: 120px;"> long Term Debt </th>
+<th style="width: 120px;"> Net Debt </th>
+<th style="width: 120px;"> Retained Earning </th>
+<th style="width: 120px;"> Total Assets </th>
+</tr>
+</table>
+</center>
+
+</body>
+<!-- https://financialmodelingprep.com/api/v3/balance-sheet-statement/AAPL?period=annual&apikey=RslEVBRQCqRMloHRNgFZKgkM1UhHPCKM" -->
+    <script>
+        window.addEventListener('DOMContentLoaded', (event)=>{
+            let source = ["https://financialmodelingprep.com/api/v3/balance-sheet-statement/AAPL?period=annual&apikey=RslEVBRQCqRMloHRNgFZKgkM1UhHPCKM"]
+            let index = 0
+            while(index<source.length){
+                console.log("fetching from"+source[index])
+                fetch(source[index])
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    let dat = JSON.stringify(data);
+                    dat1 = data;
+                    console.log(dat1);
+                    let bod = document.getElementById("body");
+                    var tb = document.getElementById("tbl");
+
+                    for(let i=0;i<dat1.length;i++)
+                    {
+                        var tr = document.createElement('tr');
+                        var td = document.createElement('td');
+
+                        td.innerHTML = dat1[i]["date"];
+                        tr.appendChild(td);
+                        tb.appendChild(tr);
+
+                        var td = document.createElement('td');
+
+                        td.innerHTML = dat1[i]["netReceivables"];
+                        tr.appendChild(td);
+                        tb.appendChild(tr);
+
+                        var td = document.createElement('td');
+
+                        td.innerHTML = dat1[i]["cashAndCashEquivalents"];
+                        tr.appendChild(td);
+                        tb.appendChild(tr);
+
+                        var td = document.createElement('td');
+
+                        td.innerHTML = dat1[i]["longTermDebt"];
+                        tr.appendChild(td);
+                        tb.appendChild(tr);
+
+                        var td = document.createElement('td');
+
+                        td.innerHTML = dat1[i]["netDebt"];
+                        tr.appendChild(td);
+                        tb.appendChild(tr);
+
+                        var td = document.createElement('td');
+
+                        td.innerHTML = dat1[i]["retainedEarnings"];
+                        tr.appendChild(td);
+                        tb.appendChild(tr);
+
+                        var td = document.createElement('td');
+
+                        td.innerHTML = dat1[i]["totalAssets"];
+                        tr.appendChild(td);
+                        tb.appendChild(tr);
+                    }
+                })
+                .catch(error => console.log('error', error));
+                index+=1;
+            }
+        })
+    </script>
+</html>
+
+
+
+////////////////////////////////////////////////////////
+
+(function(){
+    self.addEventListener('install',event =>{
+        console.log('service worker installing');
+        self.skipWaiting();
+    })
+    self.addEventListener('activate',event=>{
+        console.log('service worker activating...')
+    })
+    self.addEventListener('fetch',event=>{
+        console.log('fetching',event.request.url);
+    })
+})
+
+
+/////////////////
+
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Login Page</title>
+<style>
+    h1,p{
+        color:"blue";
+        font-family:"Comic Sans MS";
+    }
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-family:"Comic Sans MS";
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color:#008CBA;
+		width: 30%;
+    }
+
+	input[type=text],[type=password] {
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+<link rel="manifest" href="manifest.json">
+<body>
+<form action="/login" method="post">
+<div style="margin-top:150px; text-align: center;">
+<h1>
+Login</h1><br><br>
+<input type="text" placeholder="Enter Username" name="username" id="username"/><br>
+<input type="password" placeholder="Enter Password" name="password" id="password"/><br><br>
+<input type="submit" value="Login" class="button"/>
+</div>
+</form>
+<script>
+    if('serviceWorker' in navigator){
+        window.addEventListener('load',()=>{
+            navigator.serviceWorker.register('sw.js')
+        .then(registration =>{
+            console.log('service worker is registered',registration);
+        })
+        .catch(err =>{
+            console.log('Registration failed',err);
+        })
+        })
+    }
+</script>
+<script src="main.js"></script>
+</body>
+</html>
+
