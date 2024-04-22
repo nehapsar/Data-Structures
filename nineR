@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<link rel="manifest" href="manifest.json">
+
+<body>
+    <h1>Github Profile</h1>
+    <input type="text" id="text_input">
+    <input type="button" onclick="gitdata()" value="get profile">
+    <div id='git_image'>
+        <img src="" alt="profile image" id="image">
+        <p id='para'></p>
+    </div>
+</body>
+
+<!-- Github API - https://api.github.com/users -->
+<script>
+    function gitdata()
+    {
+        var url = 'https://api.github.com/users/'+document.getElementById('text_input').value;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.avatar_url)
+            var im = document.getElementById("image");
+            im.setAttribute("src",data.avatar_url);
+
+            var gi = document.getElementById('para');
+            gi.innerHTML=JSON.stringify(data);
+        })
+
+        .catch(function(response){
+            return response.status;
+            console.log(response.status);
+        });;
+    }
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+/////////////////////////
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Login Page</title>
+<style>
+    h1,
+    p {
+        color: "blue";
+        font-family: "Comic Sans MS";
+    }
+
+    .button {
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-family: "Comic Sans MS";
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        background-color: #008CBA;
+        width: 30%;
+    }
+
+    input[type=text],
+    [type=password] {
+        width: 30%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+<link rel="manifest" href="manifest.json">
+<body>
+    <form action="/login" method="post">
+        <div style="margin-top:150px; text-align: center;">
+            <h1>
+                Login</h1><br><br>
+            <input type="text" placeholder="Enter Username" name="username" id="username" /><br>
+            <input type="password" placeholder="Enter Password" name="password" id="password" /><br><br>
+            <input type="submit" value="Login" class="button" />
+        </div>
+    </form>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
+        } else {
+            console.log('Service Worker is not supported in this browser.');
+        }
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+(function()
+{
+    //method that runs when the sw is installed for the first time
+    self.addEventListener('install', event=>{
+        console.log('service worker is installing');
+        //loading tatic html into cache first
+
+        event.waitUntil(
+            caches
+            .open('PWD_app')
+            .then(cache=>
+                cache.addAll([
+                    '/git'
+                ]))
+        )
+        self.skipWaiting();
+    })
+
+    //method that runs when the sw is activated
+    self.addEventListener('activate',event=>{
+        event.waitUntil(caches.delete('PWD_app'));
+        console.log("service worker is activating");
+    })
+
+    //method that will run when the app makes fetch calls
+    self.addEventListener('fetch',event=>{
+        console.log('fetching...',event.request.url);
+        event.respondWith(
+            //checking if the response is already available on cache
+            caches.match(event.request).then(async(response)=>
+            {
+                if(response){
+                    //found response in cache
+                    return response
+                }
+
+                //loading the fetch response into the cache
+                let data = fetch(event.request);
+                let data_clone = (await data).clone();
+                event.waitUntil(caches.open('PWD_app').then(cache.put(event.request,data_clone)));
+                return data
+            })
+        )
+    })
+})
