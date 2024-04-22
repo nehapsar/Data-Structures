@@ -1,0 +1,69 @@
+self.addEventListener('install', (event) => {
+    event.waitUntil(
+        caches.open('PWA_APP')
+        .then(cache => {
+            cache.addAll(['/git'])
+        })
+    )
+
+    self.skipWaiting();
+})
+
+
+self.addEventListener('activate', (event) => {
+    event.waitUntil(
+        caches.delete('PWA_APP')
+    )
+})
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+        .then(async (response) => {
+            if(response){
+                return response;
+            }
+
+            let data = fetch(event.request)
+            let data_clone = (await data).clone();
+
+            event.waitUntil(
+                caches.open('PWA_APP')
+                .then(cache => {
+                    cache.put(event.request, data_clone)
+                })
+            )
+
+            return data
+        })
+    )
+})
+
+
+////////////////////
+
+ if('serviceWorker' in navigator){
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js', ({scope: "/"}))
+                .then(registration => {
+                    console.log(registration);
+                })
+                .catch(err => console.log(err))
+            })
+
+/////
+
+
+  function gitdata(){
+        let url = "https://api.github.com/users/" + document.getElementById('text_input').value;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.avatar_url)
+
+            var img = document.getElementById("image")
+            img.setAttribute("src", data.avatar_url)
+
+            var gi = document.getElementById("para")
+            gi.innerHTML = JSON.stringify(data);
+        })
